@@ -1,1 +1,388 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <br>
+    <div class="logo" style="text-align: center;">
+        <a href="index.html">
+          <img src="./assets/images/optimus.jpg">
+        </a>
+    </div>
+    <title>Optimus-1: Hybrid Multimodal Memory Empowered Agents Excel in Long-Horizon Tasks</title>
+
+    <script>
+        var task_map = {
+            "simple-object-manipulation": "simple_object_manipulation",
+            "visual-goal-reaching": "visual_goal_reaching",
+            "novel-concept-grounding": "novel_concept_grounding",
+            "one-shot-video-imitation": "one_shot_video_imitation",
+            "visual-constraint-satisfaction": "visual_constraint_satisfaction",
+            "visual-reasoning": "visual_reasoning"
+        };
+
+        function updateDemoVideo(category) {
+            // var demo = document.getElementById("single-menu-demos").value;
+            var task = document.getElementById(category + "-menu-tasks").value;
+            var inst = document.getElementById(category + "-menu-instances").value;
+
+            console.log(task_map[category], task, inst)
+
+            var video = document.getElementById(category + "-single-task-video");
+            video.src = "assets/videos/demos/" +
+                task_map[category] +
+                "/" +
+                task +
+                "/" +
+                inst +
+                ".mp4";
+            video.playbackRate = 2.0;
+            video.play();
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="./static/css/academicons.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Optimus-1: Hybrid Multimodal Memory Empowered Agents Excel in Long-Horizon Tasks</h1>
+                    <!-- <h3 class="title is-4 conference-authors"><a target="_blank" href="https://cvpr.thecvf.com/">CVPR 2024</a> -->
+                    </h3>
+                    <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block">
+                <a target="_blank" href="https://github.com/IranQin">Yiran&#160;Qin</a><sup>1 2*</sup>,
+                <a target="_blank" href="https://github.com/Zhoues">Enshen&#160;Zhou</a><sup>1 3*</sup>,
+                <a target="_blank"
+                   href="https://github.com/glimmer2004">Qichang&#160;Liu</a><sup>1 4*</sup>,
+                <a target="_blank" href="https://scholar.google.com.hk/citations?user=ngPR1dIAAAAJ&hl=zh-CN">Zhenfei&#160;Yin</a><sup>1 5</sup>,
+                <br>
+                <a target="_blank" href="https://lucassheng.github.io/">Lu&#160;Sheng</a><sup>3&#9993</sup>,
+                <a target="_blank"
+                   href="http://www.zhangruimao.site/">Ruimao&#160;Zhang</a><sup>2&#9993</sup>,
+                <a target="_blank" href="https://scholar.google.com/citations?user=gFtI-8QAAAAJ&hl=en">Yu&#160;Qiao</a><sup>1</sup>,
+                <a target="_blank" href="https://amandajshao.github.io/">Jing&#160;Shao</a><sup>1&dagger;</sup>
+            </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup>Shanghai Artificial Intelligence Laboratory; </span>
+                        <span class="author-block"><sup>2</sup>The Chinese University of Hong Kong, Shenzhen (CUHK-Shenzhen); </span>
+                        <span class="author-block"><sup>3</sup>Beihang University; </span>
+                        <span class="author-block"><sup>4</sup>Tsinghua University; </span>
+                        <span class="author-block"><sup>5</sup>The University of Sydney; </span>
+                    </div>
+
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>*&#160;</sup>Equal Contribution&#160;&#160;</span>
+                        <span class="author-block"><sup>&#9993&#160;</sup>Corresponding author&#160;&#160;</span>
+                        <span class="author-block"><sup>&dagger;&#160;</sup>Project Leader&#160;&#160;</span>
+                    </div> -->
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- TODO PDF Link. -->
+                            <span class="link-block">
+                <a target="_blank" href=""
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+                            <span class="link-block">
+                <a target="_blank" href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>PDF</span>
+                </a>
+              </span>
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                <a target="_blank" href="https://github.com/CybertronAgent/Optimus-1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="columns is-centered has-text-centered">
+    <div class="column">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/AZeS3C_S_3M?si=lIUkwqr355KCegxV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p style="font-size: 125%">
+                        Building a general-purpose agent is a long-standing vision in the field of artificial intelligence. Existing agents have made remarkable progress in many domains, yet they still struggle to complete long-horizon tasks in an open world. We attribute this to the lack of necessary world knowledge and experience that can guide agent through a variety of long-horizon tasks. In this paper, we propose a \textbf{Hybrid Multimodal Memory} module to address above challenges. It \textbf{1) }transforms knowledge into \textbf{Hierarchical Directed Knowledge Graph} that allow agents to explicitly represent and learn world knowledge, and \textbf{2) }summarises historical information into \textbf{Abstracted Multimodal Experience Pool} that provide agents with rich references for in-context learning. On top of the Hybrid Multimodal Memory module, a multimodal multimodular agent, Optimus-1, is constructed with dedicated \textbf{Knowledge-guided Planner} and \textbf{Experience-Driven Reflector} in Minecraft, contributing to a better planning and reflection in the face of long-horizon tasks. Extensive experimental results show that Optimus-1 significantly outperforms all existing agents on challenging long-horizon tasks benchmark, and exhibits near human-level performance on many tasks. In addition, we introduce various Multimodal Large Language Models (MLLM) as the backbone of Optimus-1, and the experimental results show that Optimus-1 exhibit strong generalisation with the help of Hybrid Multimodal Memory module, outperforming the GPT-4V baseline on many tasks. The extensive experimental results show that Optimus-1 makes a major step towards a general agent with a human-like level of performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <div class="rows is-centered ">
+                <div class="row is-full-width">
+                    <span style="font-size: 115%">The process of finishing the task ''<b>kill a pig with a stone sward during the daytime near the water with grass next to it.</b>''</span>
+                    <img src="assets/images/motivation.png" class="interpolation-image"
+                         alt="" style="display: block; margin-left: auto; margin-right: auto"/>
+                    <br>
+                    <!-- <span style="font-size: 110%"><b>Multimodal prompts for task specification.</b> We observe that many robot manipulation tasks can be expressed as <i>multimodal prompts</i> that interleave language and image/video frames. We propose VIMA, an embodied agent capable of processing mulitimodal prompts (left) and controlling a robot arm to solve the task (right).</span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Model-->
+<section class="section">
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <div class="rows is-centered ">
+                <div class="row is-full-width">
+                    <h2 class="title is-3"><span class="dvima">Overview of MP5 architecture.</span></h2>
+                    <img src="assets/images/pipeline.png" class="interpolation-image"
+                         alt="" style="display: block; margin-left: auto; margin-right: auto"/>
+                    <br>
+                    <span style="font-size: 110%">
+<span style="font-weight: bold">Module interaction in MP5.</span> After receiving the task instruction, MP5 first utilizes Parser to generate a sub-objective list. Once a sub-objective is passed to the Planner, the Planner Obtaining Env. Info. for Perception-aware Planning. The performer takes frequently Perception-aware Execution to interact with the environment by interacting with the Patroller. Both Perception-aware Planning and Execution rely on the Active Perception between the Percipient and the Patroller. Once there are execution failures, the Planner will re-schedule the action sequence of the current sub-objective. Mechanisms for collaboration and inspection of multiple modules guarantee the correctness and robustness when MP5 is solving an open-ended embodied task.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <div class="rows is-centered ">
+                <div class="row is-full-width">
+                    <h2 class="title is-3"><span class="dvima">Active Perception</span></h2>
+                    <img src="assets/images/active perception.png" class="interpolation-image"
+                         alt="" style="display: block; margin-left: auto; margin-right: auto"/>
+                    <br>
+                    <span style="font-size: 110%">
+<span style="font-weight: bold">A demonstration of the process of Active Perception scheme.</span> Temporary Env. Info. Set saves information collected in the current scenario, so it should be reset at the beginning of Active Perception scheme. Performer then invokes Patroller to start asking Percipient questions with respect to the description of the sub-objective and the current execution action round by round. The responses of Percipient are saved in Temporary Env. Info. Set and are also gathered as the context for the next question-answering round. After finishing asking all significant necessary questions, Patroller will check whether the current execution action is complete by analyzing the current sub-objective with Perceived env info. saved in Temporary Env. Info. Set, therefore complex Context-Dependent Tasks could be solved smoothly.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!--Experiments-->
+<section class="section">
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <div class="rows is-centered ">
+                <div class="row is-full-width">
+                    <h2 class="title is-3"><span
+                            class="dvima">Experiments of Different Tasks</span></h2>
+
+                            <section class="section">
+                                <div class="container is-max-widescreen">
+                                    <div class="rows">
+                                        <div class="rows is-centered ">
+                                            <div class="row is-full-width">
+                                                <h4 class="title is-4"><span class="dvima">Process-Dependent Task Definition</span></h4>
+                                                <span style="font-size: 110%">Process-Dependent Tasks primarily investigate situation-aware planning and embodied action execution, incorporating contributions from Active Perception and other modules that continuously perceive the environment and dynamically adjust their actions to accomplish long-horizon tasks. 
+                                                <br>
+                                                <span style="font-size: 100%">In the table below, we list the names of all tasks in Process-Dependent Tasks, their reasoning steps, object icons, the final recipe, and the required tools/platforms. The reasoning step refers to the number of sub-objectives that need to be completed in order to finish the entire task.
+                                                <img src="assets/images/process dependent task.png" class="interpolation-image"
+                                                     alt="" style="display: block; margin-left: auto; margin-right: auto"/>
+                                                <br>
+                                            </div>
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="section">
+                                <div class="container is-max-widescreen">
+                                    <div class="rows">
+                                        <div class="rows is-centered ">
+                                            <div class="row is-full-width">
+                                                <h4 class="title is-4"><span class="dvima">Context-Dependent Task Definition</span></h4>
+                                                <span style="font-size: 110%">Context-Dependent Tasks primarily study how Active Perception enables the agent to better perceive low-level context information in the environment.
+                                                <br>
+                                                <span style="font-size: 100%">We first establish 6 aspects of environmental information derived from the Minecraft game environment: [Object, Mob, Ecology, Time, Weather, Brightness]. Each aspect has multiple options. Based on this, we define 16 tasks and organize their difficulty into 4 levels by taking into account the number of information elements that require perception as is shown in the table below. 
+                                                <img src="assets/images/context dependent task1.png" class="interpolation-image"
+                                                     alt="" style="display: block; margin-left: auto; margin-right: auto"/>
+                                                <br>
+                                                <span style="font-size: 100%">Easy tasks necessitate the perception of only one element, Mid tasks include 2 perception elements, Hard tasks contain 3 elements, whereas Complex tasks involve the perception of 4 to 6 elements. Each task at the same level has different environment information content, the amount of environment information contained in each task, and the corresponding specific environment information is shown in the table below.
+                                                <img src="assets/images/context dependent task2.png" class="interpolation-image"
+                                                     alt="" style="display: block; margin-left: auto; margin-right: auto"/>
+                                                <br>
+                                            </div>
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </section>
+
+                            
+                            <section class="section">
+                                <div class="container is-max-widescreen">
+                                    <div class="rows">
+                                        <div class="rows is-centered ">
+                                            <div class="row is-full-width">
+                                                <h4 class="title is-4"><span class="dvima">Agent in Context-Dependent Task</span></h4>
+                                                <video poster="" id="same_color" autoplay controls muted loop height="100%">
+                                                    <source src="assets/videos/Video 2 new.mp4"
+                                                            type="video/mp4">
+                                                </video>
+                                                <br>
+                                                <!-- <span style="font-size: 110%">
+                                                    The game-playing steps corresponding to the acquisition of different milestone objects by the agent during the completion of the craft diamond pickaxe challenge. The varying background colors denote the level of the Process-Dependent Tasks in which the milestone objects are located. -->
+                                            </div>
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </section>
+                            
+                            <section class="section">
+                                <div class="container is-max-widescreen">
+                                    <div class="rows">
+                                        <div class="rows is-centered ">
+                                            <div class="row is-full-width">
+                                                <h4 class="title is-4"><span class="dvima">Agent in Process-Dependent Task</span></h4>
+                                                <video poster="" id="same_color" autoplay controls muted loop height="100%">
+                                                    <source src="assets/videos/Video 1.mp4"
+                                                            type="video/mp4">
+                                                </video>
+                                                <br>
+                                                <!-- <span style="font-size: 110%">
+                                                    The game-playing steps corresponding to the acquisition of different milestone objects by the agent during the completion of the craft diamond pickaxe challenge. The varying background colors denote the level of the Process-Dependent Tasks in which the milestone objects are located. -->
+                                            </div>
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="section">
+                                <div class="container is-max-widescreen">
+                                    <div class="rows">
+                                        <div class="rows is-centered ">
+                                            <div class="row is-full-width">
+                                                <h4 class="title is-4"><span class="dvima">Agent in Open-Ended Task</span></h4>
+                                                <video poster="" id="same_color" autoplay controls muted loop height="100%">
+                                                    <source src="assets/videos/Video 3.mp4"
+                                                            type="video/mp4">
+                                                </video>
+                                                <br>
+                                                <!-- <span style="font-size: 110%">
+                                                    The game-playing steps corresponding to the acquisition of different milestone objects by the agent during the completion of the craft diamond pickaxe challenge. The varying background colors denote the level of the Process-Dependent Tasks in which the milestone objects are located. -->
+                                            </div>
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </section>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!--Conclusion-->
+<section class="section">
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <div class="rows is-centered ">
+                <div class="row is-full-width">
+                    <h2 class="title is-3"><span
+                            class="dvima">Conclusion</span></h2>
+
+                    <p style="font-size: 125%">
+                        In this paper, we propose Hybrid Multimodal Memory module, which is inspired by the major influence of the human long-term memory system on the completion of long-horizon tasks. Hybrid Multimodal Memory module consists of two parts: HDKG and AMEP. HDKG provides the necessary world knowledge for the planning phase of the agent, and AMEP provides the refined historical experience for the reflection phase of the agent. On top of the Hybrid Multimodal Memory, we construct the multimodal and multimodular agent Optimus-1 in Minecraft. Extensive experimental results show that Optimus-1 outperforms all existing agents on long-horizon tasks. Furthermore, we validate that general-purpose MLLM, based on our proposed Hybrid Multimodal Memory and without additional parameter updates, can exceed the powerful GPT-4V baseline. This self-evolution approach provides novel insights and directions for the study of general-purpose agents.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+    <div class="container is-max-widescreen content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@inproceedings{jiang2023vima,
+  title     = {VIMA: General Robot Manipulation with Multimodal Prompts},
+  author    = {Yunfan Jiang and Agrim Gupta and Zichen Zhang and Guanzhi Wang and Yongqiang Dou and Yanjun Chen and Li Fei-Fei and Anima Anandkumar and Yuke Zhu and Linxi Fan},
+  booktitle = {Fortieth International Conference on Machine Learning},
+  year      = {2023}
+}</code></pre>
+    </div>
+</section> -->
+
+<!-- <section class="section" id="BibTeX">
+    <div class="container is-max-widescreen content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{qin2023mp5,
+  title={MP5: A Multi-modal Open-ended Embodied System in Minecraft via Active Perception},
+  author={Yiran Qin and Enshen Zhou and Qichang Liu and Zhenfei Yin and Lu Sheng and Ruimao Zhang and Yu Qiao and Jing Shao},
+  booktitle={arXiv preprint arxiv:2312.07472},
+  year={2023}
+}</code></pre>
+    </div>
+</section> -->
+
+
+</body>
+</html>
+
