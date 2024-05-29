@@ -17,11 +17,19 @@ h1 {
     font-weight: bold;
 }
 
-.video-section {
+.header-img {
     width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.video-section {
+    width: 80%;
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+    margin-right: 5px;
 }
 
 .video-section video {
