@@ -217,3 +217,21 @@ h1 {
 .dropdown-item {
     white-space: pre-wrap;
 }
+
+.image-container {
+    text-align: center;
+    /* 居中对齐 */
+    overflow: hidden;
+    /* 清除浮动影响 */
+}
+
+.image-wrapper {
+    display: inline-block;
+    /* 使包裹图片的容器成为内联块元素 */
+}
+
+.image-wrapper img {
+    float: left;
+    margin: 0 10px;
+    /* 图片间距 */
+}
