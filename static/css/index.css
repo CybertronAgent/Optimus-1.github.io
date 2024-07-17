@@ -25,15 +25,15 @@ h1 {
 }
 
 .video-section {
-    width: 80%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
-    margin-right: 5px;
+    /* margin-bottom: 20px;
+    margin-right: 5px; */
 }
 
 .video-section video {
-    width: 30%;
+    width: 33%;
 }
 
 .footer .icon-link {
