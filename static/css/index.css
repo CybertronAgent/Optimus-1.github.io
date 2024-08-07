@@ -245,3 +245,81 @@ h1 {
     margin: 0 10px;
     /* 图片间距 */
 }
+
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
+    padding: 20px;
+}
+
+.box {
+    /* border: 1px solid black; */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* align-items: stretch; */
+    height: max-content;
+    /* border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: stretch;
+    background-color: #f5f5f5;
+    transition: transform 0.3s ease, background-color 0.3s ease; */
+}
+
+
+.box:hover {
+    transform: scale(1.05);
+    /* 放大效果 */
+    background-color: #f0f0f0;
+    /* 改变背景颜色 */
+}
+
+/* Assigning specific grid areas */
+.box .video1,
+.box .video2,
+.box .video3 {
+    flex: none;
+    /* 不让视频高度被压缩 */
+    width: 100%;
+    /* 宽度100% */
+    height: 150px;
+    /* 固定高度，确保视频一致 */
+    margin-bottom: 10px;
+    /* border: 1px solid black; */
+    /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); */
+    /* 3D阴影效果 */
+    transition: box-shadow 0.3s ease;
+    object-fit: cover;
+    /* 确保视频内容适应固定尺寸 */
+}
+
+.box .text1,
+.box .text2,
+.box .text3 {
+    flex: 1;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Grid positions */
+.box:nth-child(1) {
+    grid-column: 1 / 2;
+}
+
+.box:nth-child(2) {
+    grid-column: 2 / 3;
+}
+
+.box:nth-child(3) {
+    grid-column: 3 / 4;
+}
