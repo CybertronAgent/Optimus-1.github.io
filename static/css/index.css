@@ -141,6 +141,7 @@ h1 {
 
 .author-block {
     display: inline-block;
+    font-size: large;
 }
 
 .publication-banner img {}
